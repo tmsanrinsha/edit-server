@@ -217,7 +217,7 @@ class Handler(BaseHTTPRequestHandler):
 		if editor.still_open:
 			self.send_header('x-file', editor.filename)
 		self.end_headers()
-		self.wfile.write(contents.encode('utf-8'))
+		self.wfile.write(contents)
 
 	def _delayed_remove(self, filename):
 		def delayed_remove():
